@@ -4,6 +4,8 @@
 #include <map>
 using namespace std;
 
+void airportRange(map<string, int>, int, int);
+
 int main()
 {
 	//Milestone 1
@@ -46,12 +48,27 @@ int main()
 	}
 
 	cout << endl << "Busiest airport(s) with count " << maxTraffic << ":" << endl;
-	for (const auto& airport : traffic) {
+	//copied previous for loop that found maxTraffic, changed if to find/print airports that had matching int vals to maxTraffic
+	for (const auto& airport : traffic) { 
 		if (airport.second == maxTraffic) {
 			cout << airport.first << " " << airport.second << endl;
 		}
 	}
 
+	cout << endl;
+	airportRange(traffic, 5, 8);
+	cout << endl;
+	airportRange(traffic, 9, 12);
+
 
 }
+//Milestone 3
+void airportRange(map<string, int> traffic, int low, int high) {
+	cout << "Airports with traffic in range [" << low << ", " << high << "]: " << endl;
 
+	for (const auto& airport : traffic) {
+		if (airport.second >= low && airport.second <= high) {
+			cout << airport.first << " " << airport.second << endl;
+		}
+	}
+}
