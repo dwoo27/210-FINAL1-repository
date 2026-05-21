@@ -38,6 +38,20 @@ int main()
 	}
 
 	//Milestone 2
-	int maxTraffic;
+	int maxTraffic = 0;
+	for (const auto& airport : traffic) {
+		if (airport.second > maxTraffic) {
+			maxTraffic = airport.second;
+		}
+	}
+
+	cout << endl << "Busiest airport(s) with count " << maxTraffic << ":" << endl;
+	for (const auto& airport : traffic) {
+		if (airport.second == maxTraffic) {
+			cout << airport.first << " " << airport.second << endl;
+		}
+	}
+
+
 }
 
