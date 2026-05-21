@@ -48,7 +48,6 @@ int main()
 	}
 
 	cout << endl << "Busiest airport(s) with count " << maxTraffic << ":" << endl;
-	//copied previous for loop that found maxTraffic, changed if to find/print airports that had matching int vals to maxTraffic
 	for (const auto& airport : traffic) { 
 		if (airport.second == maxTraffic) {
 			cout << airport.first << " " << airport.second << endl;
@@ -59,9 +58,12 @@ int main()
 	airportRange(traffic, 5, 8);
 	cout << endl;
 	airportRange(traffic, 9, 12);
-
+	//Milestone 4
+	cout << endl;
+	airportRange(traffic, 1, 3);
 
 }
+
 //Milestone 3
 void airportRange(map<string, int> traffic, int low, int high) {
 	cout << "Airports with traffic in range [" << low << ", " << high << "]: " << endl;
