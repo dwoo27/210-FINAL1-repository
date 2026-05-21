@@ -6,10 +6,11 @@ using namespace std;
 
 int main()
 {
+	//Milestone 1
 	map<string, int> traffic;
 	
 	ifstream fin;
-	fin.open("210-final-1-DP26.txt");
+	fin.open("210-final-1-SP26.txt");
 
 	string origin;
 	string destination;
@@ -18,7 +19,7 @@ int main()
 	if (fin.good()){
 		while (getline(fin, buf)) {
 			origin = buf.substr(0, 3);
-			destination = buf.substr(4, 6);
+			destination = buf.substr(4, 3);
 
 			traffic[origin]++;
 			traffic[destination]++;
@@ -36,5 +37,7 @@ int main()
 		cout << airport.first << " " << airport.second << endl;
 	}
 
+	//Milestone 2
+	int maxTraffic;
 }
 
